@@ -1,88 +1,132 @@
 <!DOCTYPE html>
 <html>
-  <title>VIS 2016 Tutorial</title>
+  <title>VIS 2018 Tutorial</title>
   <xmp theme="simplex" style="display:none;">
-# IEEE VIS 2016 Tutorial: Recent Advancement in Feature-based Flow Visualization
+# Tutorial on Recent Feature Tracking Techniques (IEEE VIS 2018)
 
-Flow visualization has been a central topic in scientific visualization for many years, which can be explained by the ubiquity of vector fields in various kinds of scientific, engineering, medical researches. In all these domains, with today’s ever-growing computation power, numerical simulations produce large, time-varying and highly complex vector fields. Preserving the rich information in these large and complex vector fields and presenting concise visualizations for clarity are two desired goals, but they are often conflicting. Striking a balance between them is challenging, which requires us to better distinguish the features from the contexts. Understanding and extracting features become critical to obtain insights from the vector fields with growing sizes and complexities. In this tutorial, we cover different topics centered at the feature-based flow visualization and analysis: (a) interactive techniques that allow users to discover their features of interest; (b) spatio-temporal flow analysis that considers n-dimensional unsteady flows as (n+1)-dimensional steady flows; (c) feature extraction, tracking and simplification with robustness that captures structural stability of the data; d) vector field techniques for large-scale time-varying data, especially the parallel algorithms and in-situ techniques; and (f) theories and scalability issues in ensemble and uncertain flow. This tutorial aims at providing information of the state-of-the-art techniques for feature-based flow visualization in different aspects, including interactive exploration, large-scale time-varying data, topological robustness and ensemble data.
+The purpose of this tutorial is to review feature tracking, which is a traditional but still core research topic in scientific visualization.  In general, feature tracking aims at characterizing and understanding the evolution of features in time-varying scientific datasets, including scalar and vector fields.  The tutorial has two main sessions: the first session will review general techniques including statistics, topology, and combinatorial based feature tracking algorithms; the second session will then present specific feature tracking algorithms for complex-valued scalar fields and flow fields.  The tutorial will also organize a short panel discussion on future research directions on feature tracking.
 
 
 ## Organizers
 
-* [Jun Tao](http://www.nd.edu/~jtao1/), University of Notre Dame
 * [Hanqi Guo](http://www.mcs.anl.gov/~hguo/), Argonne National Laboratory
-* [Bei Wang](http://www.sci.utah.edu/~beiwang/), University of Utah
-* [Christoph Garth](http://vis.uni-kl.de/people/garth/), University of Kaiserslautern
+* [Harsh Bhatia](http://www.sci.utah.edu/~hbhatia/), Lawrence Livermore National Laboratory
 * [Tino Weinkauf](http://www.csc.kth.se/~weinkauf/), KTH Stockholm
+* [Gunther H. Weber](http://crd.lbl.gov/q/ghweber/), Lawrence Berkeley National Laboratory and University of California, Davis
+* [Han-Wei Shen](http://web.cse.ohio-state.edu/~shen.94/), The Ohio State University
+
 
 ## Schedule
 
-The tutorial is from 8:30am to 12:10pm on October 23, 2016:
+The tutorial is from 2:20pm to 6:00pm on Sunday, October 21, 2018:
 
-* Introduction: Tino Weinkauf, 10 minutes
-* Talk 1: Jun Tao, 36 minutes
-* Talk 2: Bei Wang, 36 minutes
-* Talk 3a: Tino Weinkauf, 18 minutes
+* Talk 1: Han-Wei Shen, 35 minutes
+* Talk 2: Gunther Weber, 35 minutes
+* Talk 3: Tino Weinkauf, 35 minutes
 * Coffee Break, 20 minutes
-* Talk 3b: Tino Weinkauf, 18 minutes
-* Talk 4: Christoph Garth, 36 minutes
-* Talk 5: Hanqi Guo, 36 minutes
-* Conclusions: Christoph Garth, 10 minutes
+* Talk 4: Hanqi Guo, 35 minutes
+* Talk 5: Harsh Bhatia, 35 minutes
+* Panel Discussion and Closing, 15 minutes
 
 
 ## Talks
 
-### Expressive Flow Field Exploration (Jun Tao)
+### Statistics Based Feature Extraction and Tracking (Han-Wei Shen)
 
-[Slides](tao.pdf)
+[Slides](shen.pdf)
 
-A major task of visualizing steady flow fields is to allow users perceive the flow patterns and locate features of interest. Traditional flow visualization approaches, such as seed placement and streamline selection, generate an appropriate set of streamlines to describe steady flow fields. However, only limited capabilities are provided to meet specific needs from different users, especially at the streamline segment level. In this talk, we will start from an automatic streamline and viewpoint selection framework, and then introduce three interactive exploration approaches. We demonstrate that the transition from the automatic approaches to the interactive ones provides more flexibility that allows users to specify, identify and observe their interested patterns/features in a more desired way.
+<b>Abstract:</b> 
+Scientists overview and identify regions of interest by transforming
+data into compact information descriptors that characterize simulation
+results and allow detailed analysis on demand. Among many existing
+feature descriptors, statistical information derived from data samples
+is a promising approach to taming the big data avalanche because data
+distributions computed from a population can compactly describe the
+presence and characteristics of salient data features with minimal
+data movement. The ability to computationally summarize and process
+data using distributions also provides an efficient and representative
+capture of information that can adjust to size and resource
+constraints, with the added benefit that uncertainty associated with
+the results can be quantified and communicated.  In this tutorial, I will
+discuss several recent works on using distributions as a new paradiagm for
+representing large scale scientific data sets.  The goal is to
+ensure that scientists can easily obtain an overview of the entire
+data set regardless of the size of the simulation output; understand
+the characteristics and locations of features; easily interact with
+the data and select regions and features of interest; and perform all
+the analysis tasks with a small memory footprint.
 
-Jun Tao is currently a postdoctoral researcher at University of Notre Dame. He received a PhD degree in computer science from Michigan Technological University in 2015. His major research interest is scientific visualization, especially on applying information theory, optimization techniques, and topological analysis to flow visualization and multivariate data exploration. He is also interested in graph-based visualization, image collection visualization, and software visualization. He received the Dean’s Award for Outstanding Scholarship and the Finishing Fellowship at Michigan Technological University in 2015, and a Best Paper Award at IS&T/SPIE VDA 2013.
+<b>Speaker:</b>
+Han-Wei Shen is a full professor at The Ohio State University. He has
+over two decades of experience in large scale data visualization and
+analysis. He has served as an Associate Editor for IEEE Transactions on Visualization and 
+Computer Graphics, a  paper co-chair for Pacific, and a paper-co chair for IEEE SciVis. He was 
+also a member of IEEE Visualization Executive Committee, and is currently a member of 
+IEEE SciVis Steering Committee. Prof. Shen  has participated in many US federal big data research
+initiatives, including the NSF's big data program,multiple Department of Energy (DOE)’s Scientific Data Management and
+Analysis at Extreme Scale projects, and DOE's SciDAC Institute of Scalable Data Management, Analysis, and Visualization.  Before joining
+Ohio State, he was a research scientist at NASA Ames Research Center in Mountain View California between 1996 and 1999. His primary
+research interests are scientific visualization and computer graphics. Professor Shen is a winner of National Science Foundation's
+CAREER award and US Department of Energy's Early Career Principal Investigator Award. He also won the outstanding teaching award three
+times from the Department of Computer Science and Engineering at the Ohio State University.
 
-### Spatio-temporal Flow Analysis (Tino Weinkauf)
+### Topology-based feature tracking in scalar fields (Gunther Weber)
+
+[Slides](weber.pdf)
+
+<b>Abstract:</b>
+With increasing size and dimensionality, time-varying data become difficult to visualize and analyze. One solution to this challenge is to detect features, i.e., salient data subsets, at each point in time and track their evolution to obtain more compact and less cluttered visualizations. We focus on scalar fields, where many feature definitions are based on super-/sub-level sets and isosurfaces. Starting with overlap tracking, feature tracking approaches have evolved considerably over the years. Topology-based methods provide solid theoretical foundation for correlating and tracking features. We will review feature definitions ins scalar fields based on super-/sub-level sets and isosurfaces and how they relate to topological structures like merge-tree, contour tree and Reeb graph. Subsequently, we will provide an overview of topology-based methods that use contour trees, merge-trees and the Reeb graph and discuss their respective advantages and disadvantages. Finally, we will review presentation of tracking information, including tracking features at multiple levels and how effective representation relates to the chosen tracking approach.
+
+<b>Speaker:</b>
+Gunther H. Weber received a Ph.D. in computer science, with a focus on computer graphics and visualization, from the University of Kaiserslautern, Germany in 2003. He is currently a Staff Scientist in the Computational Research Division at the Lawrence Berkeley National Laboratory (LBNL), where he serves as Deputy Group Lead of the Data Analysis and Visualization Group in the Data Science and Technology Department. Gunther Weber is also an Adjunct Associate Professor of Computer Science at the University of California, Davis. His  research interests include computer graphics, scientific visualization, data analysis with using topological methods, parallel and distributed computing for visualization and data analysis applications, hierarchical data representation methods, and bioinformatics. He has extensive experience in working with researchers from diverse science and engineering fields, including applied numerical computing, combustion simulation, gene expression, medicine, civil engineering, cosmology, climate and particle accelerator modeling. 
+
+
+### Feature-Tracking using Discrete Methods (Tino Weinkauf)
 
 [Slides](weinkauf.pdf)
 
-Understanding the processes in time-dependent flows is of crucial importance in many domains. Different methods exist for this purpose. This talk reviews methods that build on a spatio-temporal concept where the temporal dimension is treated on equal footing with the spatial dimensions. This means, an n-dimensional unsteady flow is analyzed as an (n+1)-dimensional steady flow. This has led to a number of powerful analysis and visualization methods in the last decade such as Feature Flow Fields, Swirling Motion Cores, Streak Lines as Tangent Curves, and more. The talk will cover the range from theoretical foundations to the applications on real data.
+<b>Abstract:</b>
+We explore several different feature tracking techniques based on topological descriptions of scalar data. This includes tracking critical points using the discrete Morse-Smale complex as well as tracking regions defined by subtrees of merge trees. The talk focuses on discrete methods that allow for combinatorial algorithms. Furthermore, we extend the idea of feature comparison to spatio-temporal features and explore how this helps in understanding time-dependent data.
 
-Tino Weinkauf received his diploma in computer science from the University of Rostock in 2000. From 2001, he worked on feature-based flow visualization and topological data analysis at Zuse Institute Berlin. He received his Ph.D. in computer science from the University of Magdeburg in 2008. In 2009 and 2010, he worked as a postdoc and adjunct assistant professor at the Courant Institute of Mathematical Sciences at New York University. He started his own group in 2011 on Feature-Based Data Analysis in the Max Planck Center for Visual Computing and Communication, Saarbrücken. Since 2015, he holds the Chair of Visualization at KTH Stockholm. His current research interests focus on flow analysis, discrete topological methods, and information visualization.
+<b>Speaker:</b>
+Tino Weinkauf received his diploma in computer science from the
+University of Rostock in 2000. From 2001, he worked on featurebased
+flow visualization and topological data analysis at Zuse Institute
+Berlin. He received his Ph.D. in computer science from the University
+of Magdeburg in 2008. In 2009 and 2010, he worked as a postdoc
+and adjunct assistant professor at the Courant Institute of Mathematical
+Sciences at New York University. He started his own group in
+2011 on Feature-Based Data Analysis in the Max Planck Center for
+Visual Computing and Communication, Saarbrcken. Since 2015, he
+holds the Chair of Visualization at KTH Stockholm. His current research
+interests focus on flow analysis, discrete topological methods,
+and information visualization.
 
-### Flow Analysis with Robustness (Bei Wang)
 
-[Slides (Part 1)](wang1.pdf) | [Slides (Part 2)](wang2.pdf)
 
-This talk will review topological approaches for flow visualization. In particular, we will discuss a recent line of research that spans feature extraction, feature tracking, and feature simplification of vector fields based upon the topological notion of robustness that captures structural stability of the data. Robustness, a concept similar to persistent homology, quantifies the stability of critical points with respect to the minimum amount of perturbation in the fields required to remove them. We will discuss how this line of work can potentially increase the interpretability of data, specifically, by giving a coherent and multi-scale view of the flow dynamics under both stationary and time-varying settings. We will demonstrate how robustness-based approaches are independent of the topological skeleton and are scalable to large-scale datasets.
-
-Bei Wang is an assistant professor at the School of Computing and the Scientific Computing and Imaging Institute, University of Utah. Her main research interests lie in the theoretical, algorithmic, and application aspects of data analysis and data visualization, with a focus on topological techniques. She is also interested in computational biology and bioinformatics, machine learning and data mining. She is a member of ACM and IEEE.
-
-### Vector Field Techniques for Large-Scale Data (Christoph Garth)
-
-[Slides](garth.pdf)
-
-Large-scale vector fields as arising from modern scientific computing and experimental workflows pose substantial and significant challenges to visualization. While there is a rich body of work addressing flow visualization, many methods are unable to scale to modern data set sizes both algorithmically and with respect to the complexity of the obtained results. In his talk, he will discuss the application of flow visualization techniques to large-scale, time-varying vector fields, and report on recent research results in this area. Particular attention will be given to parallel algorithms and in-situ techniques that eschew the requirement to store full-fidelity data to achieve accurate visualization. On the latter topic, the talk will discuss several methods to flexibly analyse vector field data at reduced resolution. To conclude, recent results for large-scale vector field ensembles will be discussed.
-
-Christoph Garth is an assistant professor in the Computer Science Dept. at the University of Kaiserslautern, Germany. His main research interests include visualization and analysis of large-scale, multi-modal data as well as time-varying vector field visualization, with an emphasis on topology-based methods and in situ techniques.
-
-### Scalable Ensemble and Uncertain Flow Field Visualization (Hanqi Guo)
+### Feature Extraction and Tracking in Complex-Valued Scalar Fields (Hanqi Guo)
 
 [Slides](guo.pdf)
 
-This talk covers both theoritical foundations and scalability studies in ensemble and uncertain flow visualization. As the growth of computation powers, scientists can generate ensembles of flow simulations, or flows with uncertainties, but it remains a great challenge to visualize and understand such data. First, features in flow visualization, such as FTLE and LCS, must be redefined for ensemble and uncertain flows. We review the traditional and direct visualization techniques, as well as advances in this topic, such as coupled field line tracing and analysis in numerical ensembles, comparative ensemble flow visualization, and the the measurement of flow divergence in uncertain unsteady flows. Second, the analysis of uncertain and ensemble and uncertain flows require scalability. We review the scalable algorithms to advect particles in ensemble and uncertain flows, because they play the central role in flow analysis and consumes majority computation time. New techniques in flow data management and stochastic particle tracing are covered, which can help scientists analyze ensemble and uncertain flows at scale. 
+<b>Abstract:</b>
+Topological singularities, or vortices, in 3D complex-valued scalar fields are the most important features in many scientific applications including superconductivity, superfluidity, and Bose-Einstein condensation.  This talk presents a method for the extraction and tracking of vortices for both structured and unstructured mesh superconductivity simulations.  This method represents each vortex line as a connected graph extracted from the discretized field in both space and time.  For a time-varying discrete dataset, our vortex extraction and tracking method is as accurate as the data discretization. We then apply 3D visualization and 2D event diagrams to the extraction and tracking results to help scientists understand vortex dynamics and macroscale superconductor behavior in greater detail than previously possible.  In addition, we present an workflow that extracts and tracks vortices in situ.
 
-Hanqi Guo is a Postdoctral Appointee in the Mathematics and Computer Science Division, Argonne National Laboratory. He received his PhD degree in computer science from Peking University in 2014, and the BS degree in mathematics and applied mathematics from Beijing University of Posts and Telecommunications in 2009. His research interests are mainly on uncertainty visualization, flow visualization, and large-scale scientific data visualization.
+<b>Speaker:</b>
+Hanqi Guo is an assistant computer scientist in the Mathematics and Computer Science Division at Argonne National Laboratory.  He received his PhD degree in computer science from Peking University in 2014, and the BS degree in mathematics and applied mathematics from Beijing University of Posts and Telecommunications in 2009. His research interests are mainly on uncertainty visualization, flow visualization, and large-scale scientific data visualization.
+
+
+
+### Feature extraction and tracking using vector field decompositions (Harsh Bhatia)
+
+[Slides](bhatia.pdf)
+
+<b>Abstract:</b>
+Extraction and time tracking of flow features is critical to explore the underlying phenomena, and several types of approaches have been proposed to this end. In this session, I will discuss a series of techniques that utilize vector field decompositions to extract and track coherent features in flow fields. Starting with Polthier and Preuß's work on computing the Helmholtz-Hodge decomposition on triangulations and its applications to compute critical points, I will talk about several improvements, including different applications as well as 3D computations. I will also discuss the more-recently proposed <em>natural Helmholtz-Hodge decomposition</em>, and present how it has been used to extract temporally coherent features through internal reference frames.
+
+<b>Speaker:</b>
+Harsh Bhatia is a Computer Scientist at the Center for Applied Scientific Computing at Lawrence Livermore National Laboratory (LLNL). Prior to his appointment, he received his Ph.D. degree in Computing from the Scientific Computing and Imaging (SCI) institute, The University of Utah, and finished post-doctoral research at LLNL. Harsh has keen interest in scientific and information visualization, high-performance computing, large-scale data analysis, and has worked extensively in flow visualization techniques. 
 
 </xmp>
 <script src="./strapdown.js"></script>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-86175085-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
 </html>
