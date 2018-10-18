@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <title>VIS 2016 Tutorial</title>
+  <xmp theme="simplex" style="display:none;">
+# IEEE VIS 2016 Tutorial: Recent Advancement in Feature-based Flow Visualization
+
+Flow visualization has been a central topic in scientific visualization for many years, which can be explained by the ubiquity of vector fields in various kinds of scientific, engineering, medical researches. In all these domains, with today’s ever-growing computation power, numerical simulations produce large, time-varying and highly complex vector fields. Preserving the rich information in these large and complex vector fields and presenting concise visualizations for clarity are two desired goals, but they are often conflicting. Striking a balance between them is challenging, which requires us to better distinguish the features from the contexts. Understanding and extracting features become critical to obtain insights from the vector fields with growing sizes and complexities. In this tutorial, we cover different topics centered at the feature-based flow visualization and analysis: (a) interactive techniques that allow users to discover their features of interest; (b) spatio-temporal flow analysis that considers n-dimensional unsteady flows as (n+1)-dimensional steady flows; (c) feature extraction, tracking and simplification with robustness that captures structural stability of the data; d) vector field techniques for large-scale time-varying data, especially the parallel algorithms and in-situ techniques; and (f) theories and scalability issues in ensemble and uncertain flow. This tutorial aims at providing information of the state-of-the-art techniques for feature-based flow visualization in different aspects, including interactive exploration, large-scale time-varying data, topological robustness and ensemble data.
+
+
+## Organizers
+
+* [Jun Tao](http://www.nd.edu/~jtao1/), University of Notre Dame
+* [Hanqi Guo](http://www.mcs.anl.gov/~hguo/), Argonne National Laboratory
+* [Bei Wang](http://www.sci.utah.edu/~beiwang/), University of Utah
+* [Christoph Garth](http://vis.uni-kl.de/people/garth/), University of Kaiserslautern
+* [Tino Weinkauf](http://www.csc.kth.se/~weinkauf/), KTH Stockholm
+
+## Schedule
+
+The tutorial is from 8:30am to 12:10pm on October 23, 2016:
+
+* Introduction: Tino Weinkauf, 10 minutes
+* Talk 1: Jun Tao, 36 minutes
+* Talk 2: Bei Wang, 36 minutes
+* Talk 3a: Tino Weinkauf, 18 minutes
+* Coffee Break, 20 minutes
+* Talk 3b: Tino Weinkauf, 18 minutes
+* Talk 4: Christoph Garth, 36 minutes
+* Talk 5: Hanqi Guo, 36 minutes
+* Conclusions: Christoph Garth, 10 minutes
+
+
+## Talks
+
+### Expressive Flow Field Exploration (Jun Tao)
+
+[Slides](tao.pdf)
+
+A major task of visualizing steady flow fields is to allow users perceive the flow patterns and locate features of interest. Traditional flow visualization approaches, such as seed placement and streamline selection, generate an appropriate set of streamlines to describe steady flow fields. However, only limited capabilities are provided to meet specific needs from different users, especially at the streamline segment level. In this talk, we will start from an automatic streamline and viewpoint selection framework, and then introduce three interactive exploration approaches. We demonstrate that the transition from the automatic approaches to the interactive ones provides more flexibility that allows users to specify, identify and observe their interested patterns/features in a more desired way.
+
+Jun Tao is currently a postdoctoral researcher at University of Notre Dame. He received a PhD degree in computer science from Michigan Technological University in 2015. His major research interest is scientific visualization, especially on applying information theory, optimization techniques, and topological analysis to flow visualization and multivariate data exploration. He is also interested in graph-based visualization, image collection visualization, and software visualization. He received the Dean’s Award for Outstanding Scholarship and the Finishing Fellowship at Michigan Technological University in 2015, and a Best Paper Award at IS&T/SPIE VDA 2013.
+
+### Spatio-temporal Flow Analysis (Tino Weinkauf)
+
+[Slides](weinkauf.pdf)
+
+Understanding the processes in time-dependent flows is of crucial importance in many domains. Different methods exist for this purpose. This talk reviews methods that build on a spatio-temporal concept where the temporal dimension is treated on equal footing with the spatial dimensions. This means, an n-dimensional unsteady flow is analyzed as an (n+1)-dimensional steady flow. This has led to a number of powerful analysis and visualization methods in the last decade such as Feature Flow Fields, Swirling Motion Cores, Streak Lines as Tangent Curves, and more. The talk will cover the range from theoretical foundations to the applications on real data.
+
+Tino Weinkauf received his diploma in computer science from the University of Rostock in 2000. From 2001, he worked on feature-based flow visualization and topological data analysis at Zuse Institute Berlin. He received his Ph.D. in computer science from the University of Magdeburg in 2008. In 2009 and 2010, he worked as a postdoc and adjunct assistant professor at the Courant Institute of Mathematical Sciences at New York University. He started his own group in 2011 on Feature-Based Data Analysis in the Max Planck Center for Visual Computing and Communication, Saarbrücken. Since 2015, he holds the Chair of Visualization at KTH Stockholm. His current research interests focus on flow analysis, discrete topological methods, and information visualization.
+
+### Flow Analysis with Robustness (Bei Wang)
+
+[Slides (Part 1)](wang1.pdf) | [Slides (Part 2)](wang2.pdf)
+
+This talk will review topological approaches for flow visualization. In particular, we will discuss a recent line of research that spans feature extraction, feature tracking, and feature simplification of vector fields based upon the topological notion of robustness that captures structural stability of the data. Robustness, a concept similar to persistent homology, quantifies the stability of critical points with respect to the minimum amount of perturbation in the fields required to remove them. We will discuss how this line of work can potentially increase the interpretability of data, specifically, by giving a coherent and multi-scale view of the flow dynamics under both stationary and time-varying settings. We will demonstrate how robustness-based approaches are independent of the topological skeleton and are scalable to large-scale datasets.
+
+Bei Wang is an assistant professor at the School of Computing and the Scientific Computing and Imaging Institute, University of Utah. Her main research interests lie in the theoretical, algorithmic, and application aspects of data analysis and data visualization, with a focus on topological techniques. She is also interested in computational biology and bioinformatics, machine learning and data mining. She is a member of ACM and IEEE.
+
+### Vector Field Techniques for Large-Scale Data (Christoph Garth)
+
+[Slides](garth.pdf)
+
+Large-scale vector fields as arising from modern scientific computing and experimental workflows pose substantial and significant challenges to visualization. While there is a rich body of work addressing flow visualization, many methods are unable to scale to modern data set sizes both algorithmically and with respect to the complexity of the obtained results. In his talk, he will discuss the application of flow visualization techniques to large-scale, time-varying vector fields, and report on recent research results in this area. Particular attention will be given to parallel algorithms and in-situ techniques that eschew the requirement to store full-fidelity data to achieve accurate visualization. On the latter topic, the talk will discuss several methods to flexibly analyse vector field data at reduced resolution. To conclude, recent results for large-scale vector field ensembles will be discussed.
+
+Christoph Garth is an assistant professor in the Computer Science Dept. at the University of Kaiserslautern, Germany. His main research interests include visualization and analysis of large-scale, multi-modal data as well as time-varying vector field visualization, with an emphasis on topology-based methods and in situ techniques.
+
+### Scalable Ensemble and Uncertain Flow Field Visualization (Hanqi Guo)
+
+[Slides](guo.pdf)
+
+This talk covers both theoritical foundations and scalability studies in ensemble and uncertain flow visualization. As the growth of computation powers, scientists can generate ensembles of flow simulations, or flows with uncertainties, but it remains a great challenge to visualize and understand such data. First, features in flow visualization, such as FTLE and LCS, must be redefined for ensemble and uncertain flows. We review the traditional and direct visualization techniques, as well as advances in this topic, such as coupled field line tracing and analysis in numerical ensembles, comparative ensemble flow visualization, and the the measurement of flow divergence in uncertain unsteady flows. Second, the analysis of uncertain and ensemble and uncertain flows require scalability. We review the scalable algorithms to advect particles in ensemble and uncertain flows, because they play the central role in flow analysis and consumes majority computation time. New techniques in flow data management and stochastic particle tracing are covered, which can help scientists analyze ensemble and uncertain flows at scale. 
+
+Hanqi Guo is a Postdoctral Appointee in the Mathematics and Computer Science Division, Argonne National Laboratory. He received his PhD degree in computer science from Peking University in 2014, and the BS degree in mathematics and applied mathematics from Beijing University of Posts and Telecommunications in 2009. His research interests are mainly on uncertainty visualization, flow visualization, and large-scale scientific data visualization.
+
+</xmp>
+<script src="./strapdown.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-86175085-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</html>
